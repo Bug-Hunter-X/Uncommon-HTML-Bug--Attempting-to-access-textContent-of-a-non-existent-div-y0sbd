@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Check if the element exists before accessing its textContent
+    const nonExistentDiv = document.getElementById('nonExistentDiv');
+    if (nonExistentDiv) {
+      nonExistentDiv.textContent = 'This will not cause an error.';
+    } else {
+      console.error("Element with id 'nonExistentDiv' not found.");
+    }
+    document.getElementById('myDiv').textContent = 'This will execute.';
+  </script>
+</body>
+</html>
