@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Incorrectly accessing the textContent property of a div that doesn't exist
+    document.getElementById('nonExistentDiv').textContent = 'This will cause an error.'; 
+    document.getElementById('myDiv').textContent = 'This will execute.';
+  </script>
+</body>
+</html>
